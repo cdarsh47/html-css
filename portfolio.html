@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portfolio page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+	body{
+		background:#fff;
+		font-family:arial, monospace;
+		width:100%;
+		margin:0;
+	}
+	#header{
+		display:flex;
+		background:#bc2bd3;
+		border-bottom:3px solid #000;
+		position:fixed;
+		width:100%;
+		z-index: 1;
+		flex-wrap:wrap;
+	}
+	#navbar{
+		width: 100%;
+    	display: flex;
+    	justify-content: center;
+    	align-items:center;
+	}
+	li{
+		list-style-type: none;
+		display: inline-block;
+		padding:0 20px;
+	}
+	li a{color:#fff;text-decoration: none;}
+	li a:hover{text-decoration: underline;color:#fff;}
+	
+    #footer p{
+    	margin: 0;
+    	color: #fff;
+    	text-align: center;
+    	padding: 30px;
+    }
+    #footer{
+    	background: #000;
+	}
+	#projects{
+		display: flex;
+    	justify-content: center;
+    	flex-wrap: wrap;
+    	background:#ff005c;
+	}
+	.project-tile{
+		border: 1px solid #000;
+    	border-radius: 0;
+    	width: 29%;
+    	text-align: center;
+    	margin: 10px;
+    }
+    .project-tile a{
+		background: #fff;
+	    padding: 10px 30px;
+	    display: inline-block;
+	    margin: 15px;
+	    text-decoration: none;
+	    color: #000;
+	    text-transform: uppercase;
+    }
+    h2{
+	    margin: 0;
+	    background: rgb(92 74 15 / 40%);
+	    color: #fff;
+	    border-radius: 0;
+	    padding: 15px;
+	    box-shadow: 0px 5px 0px 0px #291b1b;
+    }
+    #projects p{
+    	padding: 20px 20px 0 20px;
+    	margin: 0;
+    	line-height: 25px;
+    	text-align: justify;
+    	color:#fff;
+    }
+    #welcome-section{
+    	display: flex;
+		width: 100%;
+		justify-content: center;
+		height: 100vh;
+		align-items: center;
+		background: radial-gradient(#d3d006, #182eaec7);
+    }
+    span{
+    	font-size:60px;
+    	font-family:monospace;
+    	letter-spacing: 8px;
+    }
+    h3{
+		width: 100%;
+		text-align: center;
+		font-size: 25px;
+		color:#fff;
+    }
+    .profile-info{
+		height: auto;
+		background: green;
+		color: #fff;
+		display: flex;
+		justify-content: center;
+    }
+    #profile-link{
+		font-size: 25px;
+		color: #fff;
+		font-style: italic;
+		text-decoration: underline;
+    }
+	@media(max-width: 768px){
+		.project-tile{width:100%;}
+	}
+	@media(max-width: 500px){
+		#header-logo{width:100%;justify-content:center;}
+		#navbar{width:100%;}
+		#header-img{width:unset;}
+		#header{position:unset;}
+	}
+</style>
+<body>
+	<main id="main">
+		
+		<header id="header">
+			<nav id="navbar">
+				<ul>
+					<li><a class="nav-link" href="#projects">PROJECTS</a></li>
+					<li><a class="nav-link" href="#profile">PROFILE</a></li>
+					<li><a class="nav-link" href="#footer">FOOTER</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div class="container">
+		<div id="welcome-section">
+			<h1>Hello, I am a <br/> <span><i><b>Learner</b></i></span></h1>	
+		</div>
+		<div id="projects">
+			<h3>My Projects</h3>
+			<div class="project-tile">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Parturient montes nascetur ridiculus mus mauris vitae ultricies. Bibendum ut tristique et egestas quis ipsum. Eu tincidunt tortor aliquam nulla facilisi cras fermentum odio. Etiam dignissim diam quis enim. Proin libero nunc consequat interdum varius sit amet. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Amet consectetur adipiscing elit ut aliquam purus sit.
+				</p>
+				<a href="#">Link</a>
+				<h2>Product1</h2>
+			</div>
+			<div class="project-tile">		
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Parturient montes nascetur ridiculus mus mauris vitae ultricies. Bibendum ut tristique et egestas quis ipsum. Eu tincidunt tortor aliquam nulla facilisi cras fermentum odio. Etiam dignissim diam quis enim. Proin libero nunc consequat interdum varius sit amet. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Amet consectetur adipiscing elit ut aliquam purus sit.</p>
+				<a href="#">Link</a>
+				<h2>Product2</h2>
+			</div>
+			<div class="project-tile">		
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Parturient montes nascetur ridiculus mus mauris vitae ultricies. Bibendum ut tristique et egestas quis ipsum. Eu tincidunt tortor aliquam nulla facilisi cras fermentum odio. Etiam dignissim diam quis enim. Proin libero nunc consequat interdum varius sit amet. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Amet consectetur adipiscing elit ut aliquam purus sit.</p>
+				<a href="#">Link</a>
+				<h2>Product3</h2>
+			</div>
+		</div>
+		<div id="profile" class="profile-info">
+			<p>Visit my profile on <a id="profile-link" href="https://www.freecodecamp.org/cdarshan47" target="_blank">FreeCodeCamp</a></p>
+		</div>
+		<footer id="footer">
+			<p>Copyright 2022, Portfolio.</p>
+		</footer>
+	</div>
+</main>
+</body>
+</html>
