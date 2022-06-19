@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<head>
+		<title>Batman Face</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<style>
+		body{background: yellow;}
+		.upper-face{
+			background: #000;
+		    height: 470px;
+		    margin: 0 auto;
+		    position: relative;
+		    border-radius: 5px 5px 75px 75px;
+		}
+		.left-eye,.right-eye{			
+		    background: #fff;
+		    height: 30px;
+		    display: inline-block;
+		    width: 20%;
+		    margin: 10px 10px 0 10px;
+		    border-radius: 50% / 0 0 100% 100%
+		}
+		.center-nose{
+			clip-path: circle();
+			height: 125px;
+			background: #000;
+			position: absolute;
+			left: 40%;
+			width: 125px;
+			bottom: -10%;
+		}
+		.left-eye{
+			-ms-transform: rotate(45deg); /* IE 9 */
+			transform: rotate(45deg);
+			position: absolute;
+			bottom: 150px;
+			left: 50px;
+		}
+		.right-eye{			
+    		text-align: right;
+    		float: right;
+    		-ms-transform: rotate(-45deg); /* IE 9 */
+  			transform: rotate(-45deg);
+  			position: absolute;
+    		right: 50px;
+    		bottom: 150px;
+		}
+		.bottom-lip{
+			position: absolute;
+			bottom: 50px;
+			left: 37%;
+			background: #000;
+		    height: 25px;
+		    display: inline-block;
+		    width: 23%;
+		    border-radius: 50% / 0 0 100% 100%
+		}
+		.lower-face{
+			background: #edd2b4;
+			height: 250px;
+		    width: 45%;
+		    margin: 0 auto;
+		}
+		.main-back{
+			height: 700px;
+    		background: #edd2b4;
+    		width: 50%;
+    		margin: 0 auto;
+    		position: relative;
+    		border-radius: 5px;
+		}
+	</style>
+	<main id="batman">
+		<div class="main-back">
+			<div class="upper-face">
+				<div class="left-eye"></div>
+				<div class="right-eye"></div>
+				<div class="center-nose"></div>
+			</div>
+			<div class="bottom-lip"></div>
+		</div>
+	</main>
+</body>
+</html>
