@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<head>
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<style>
+		body{
+			background: #fff;
+			margin: 0;
+    		font-family: fantasy;
+		}
+		#main-section{display: flex;}
+		.strip-1{
+			background: #303761;
+			width: 3%;
+			border: 5px solid #000;
+		}
+		.strip-2{
+			background: #4363c8;
+			width: 5%;
+			border: 5px solid #000;
+			writing-mode: vertical-lr;
+			text-orientation: upright;
+			font-size: 4em;
+		    color: #fff;
+		    vertical-align: middle;
+		    text-transform: uppercase;
+		    text-align: center;
+		}
+		.strip-3,.strip-5,.strip-7{
+			background: #000;
+			width: 2%;
+		}
+		.strip-4{
+			background: #f00;
+			border: 5px solid #000;
+			writing-mode: vertical-lr;
+			text-orientation: upright;
+			font-size: 4em;
+		    color: #fff;
+		    vertical-align: middle;
+		    text-transform: uppercase;
+		    text-align: center;
+		}
+		.strip-6{
+			background: #303761;
+			width: 5%;
+			border: 5px solid #000;
+			writing-mode: vertical-lr;
+			text-orientation: upright;
+			font-size: 4em;
+			color: #fff;
+			vertical-align: middle;
+			text-transform: uppercase;
+			text-align: center;
+		}
+		.strip-8{
+			background: #52285f;
+			width: 5%;
+			border: 5px solid #000;
+			writing-mode: vertical-lr;
+			text-orientation: upright;
+			font-size: 4em;
+			color: #fff;
+			vertical-align: middle;
+			text-transform: uppercase;
+			text-align: center;	
+		}
+		.hour{
+			padding: 10px;
+			font-size: 18em;
+			color: #58a72d;
+			font-weight: bold;
+			background: #cb0d51;
+			margin: 0;
+			text-align: center;
+			border: 5px solid #000;
+		}
+		.minute{
+			padding: 10px;
+			font-size: 18em;
+			color: #cb0d51;
+			font-weight: bold;
+			background: #58a72d;
+			margin: 0;
+			text-align: center;
+			border: 5px solid #000;
+		}
+		.time-section{
+			display: inline-block;
+			width: 100%;
+		}
+		.second{
+			padding: 10px;
+			font-size: 18em;
+			color: #838383;
+			background: #45183c;
+			font-weight: bold;
+			margin: 0;
+			text-align: center;
+			border: 5px solid #000;
+		}
+		.second-alt{
+			background: #838383;
+			color: #45183c;
+		}
+		.format{
+			padding: 10px;
+			font-size: 18em;
+			color: #45183c;
+			font-weight: bold;
+			background: #838383;
+			margin: 0;
+			text-align: center;
+			border: 5px solid #000;
+		}
+	</style>
+	<main id="main-section">
+		<div class="strip-1"></div>
+		<div class="strip-2"></div>
+		<div class="strip-3"></div>
+		<div class="strip-4">18</div>
+		<div class="strip-5"></div>
+		<div class="strip-6">june</div>
+		<div class="strip-7"></div>
+		<div class="strip-8">friday</div>
+		<div class="time-section">
+			<div class="hour">10</div>
+			<div class="second">40</div>			
+		</div>
+		<div class="time-section">	
+			<div class="minute">22</div>
+			<div class="format">AM</div>			
+		</div>
+	</main>
+	<script type="text/javascript">
+		var dt = new Date();
+		var time = dt.toLocaleTimeString();
+		var hr = dt.getHours() > 12 ? dt.getHours() - 12 : dt.getHours();
+		var ampm = dt.getHours() >= 12 ? "PM" : "AM";
+		var min = dt.getMinutes();
+		var sec = dt.getSeconds();
+		var day = dt.getDay();
+		var month = dt.getMonth()+1;
+		console.log(day)
+		week={0:"Sunday",1:"Monday",2:"Tuesday",3:"Wednesday",4:"Thursday",5:"Friday",6:"Saturday"}
+		months={1:"January",2:"February",3:"March",4:"April",5:"May",6:"June",7:"July",8:"August",9:"September",10:"October",11:"November",12:"December"}
+		document.getElementsByClassName('hour')[0].innerHTML=hr;
+		document.getElementsByClassName('minute')[0].innerHTML=min;
+		document.getElementsByClassName('second')[0].innerHTML=sec;
+		document.getElementsByClassName('format')[0].innerHTML=ampm;
+		document.getElementsByClassName('strip-8')[0].innerHTML=week[day];
+		document.getElementsByClassName('strip-4')[0].innerHTML=dt.getDate()
+		document.getElementsByClassName('strip-6')[0].innerHTML=months[month];
+		
+		setInterval(function(){
+				var dt = new Date();
+				var time = dt.toLocaleTimeString();
+				var hr = dt.getHours() > 12 ? dt.getHours() - 12 : dt.getHours();
+				var min = dt.getMinutes();
+				var sec = dt.getSeconds();
+				hr = (hr < 10) ? "0" + hr : hr;
+				min = (min < 10) ? "0" + min : min;
+				sec = (sec < 10) ? "0" + sec : sec;
+				var ampm = dt.getHours() >= 12 ? "PM" : "AM";				
+				document.getElementsByClassName('hour')[0].innerHTML=hr
+				document.getElementsByClassName('minute')[0].innerHTML=min
+				document.getElementsByClassName('second')[0].innerHTML=sec
+				document.getElementsByClassName('format')[0].innerHTML=ampm
+   				var element = document.getElementsByClassName("second")[0];
+   				element.classList.toggle("second-alt");
+			},1000)
+	</script>	
+</body>
+</html>
